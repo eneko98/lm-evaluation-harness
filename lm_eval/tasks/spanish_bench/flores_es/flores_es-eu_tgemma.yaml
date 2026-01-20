@@ -1,0 +1,4 @@
+include: _flores_common_yaml
+task: spanish_bench_flores_es-eu_tgemma
+doc_to_messages: !function _translategemma_flores.flores_es_eu
+doc_to_target: '{{sentence_eus_Latn}}'

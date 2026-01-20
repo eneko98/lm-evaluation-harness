@@ -1,0 +1,4 @@
+include: _flores_common_yaml
+task: basque_bench_flores_eu-es_tgemma
+doc_to_messages: !function _translategemma_flores.flores_eu_es
+doc_to_target: '{{sentence_spa_Latn}}'

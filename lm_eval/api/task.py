@@ -965,7 +965,18 @@ class ConfigurableTask(Task):
             if chat_template
             else None
         )
+
+        # --- chat-native message format (TranslateGemma-style) ---
+        if getattr(self.config, "doc_to_messages", None) is not None:
+            if num_fewshot not in (0, None):
+                raise ValueError("doc_to_messages tasks require num_fewshot=0")
+            if not apply_chat_template or chat_template is None:
+                raise ValueError("doc_to_messages requires --apply_chat_template")
+            msgs = self.config.doc_to_messages(doc)
+            return chat_template(msgs)
+
         description = self.resolve_field(doc, self.config.description) or ""
+
         system_prompt = maybe_delimit(
             system_instruction, description, self.config.fewshot_delimiter
         )

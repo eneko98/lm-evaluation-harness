@@ -1,4 +1,5 @@
 include: _flores_common_yaml
 task: catalan_bench_flores_ca-es_tgemma
+doc_to_text: sentence_cat_Latn
 doc_to_messages: !function _translategemma_flores.flores_ca_es
 doc_to_target: '{{sentence_spa_Latn}}'

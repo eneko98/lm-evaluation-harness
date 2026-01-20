@@ -1,4 +1,5 @@
 include: _flores_common_yaml
 task: galician_bench_flores_en-gl_tgemma
+doc_to_text: sentence_eng_Latn
 doc_to_messages: !function _translategemma_flores.flores_en_gl
 doc_to_target: '{{sentence_glg_Latn}}'

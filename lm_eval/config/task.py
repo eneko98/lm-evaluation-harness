@@ -99,6 +99,7 @@ class TaskConfig(dict):
     # see docs/advanced_task_guide.md for more info
     process_docs: Callable | None = None
     doc_to_text: Callable | str | None = None
+    doc_to_messages: Callable | str | None = None
     doc_to_target: Callable | str | None = None
     doc_to_image: Callable | str | None = None
     doc_to_audio: Callable | str | None = None
